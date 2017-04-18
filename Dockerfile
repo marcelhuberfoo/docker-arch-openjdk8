@@ -3,9 +3,8 @@ MAINTAINER Marcel Huber <marcelhuberfoo@gmail.com>
 
 USER root
 
-RUN echo -e '[infinality-bundle]\nSigLevel=Never\nServer = http://bohoomil.com/repo/$arch\n[infinality-bundle-fonts]\nSigLevel=Never\nServer = http://bohoomil.com/repo/fonts' >> /etc/pacman.conf
 RUN pacman -Syy -q --noconfirm jre8-openjdk-headless java-rhino jdk8-openjdk p7zip gtk2 \
-    gnome-themes-standard fontconfig-infinality-ultimate ibfonts-meta-base && \ 
+    gnome-themes-standard fontconfig ttf-droid ttf-dejavu ttf-freefont && \ 
     printf "y\\ny\\n" | pacman -Scc
 
 # Add support for extra strength cryptographic ciphers
